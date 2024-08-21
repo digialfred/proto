@@ -1,0 +1,16 @@
+.contenedor{   
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#textContainer{
+    width: 200px;
+height: 200px;
+  background-color: aqua;
+}
+
+.myStyle {
+    background-color: coral;
+    padding: 16px;
+  }

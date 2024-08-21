@@ -1,0 +1,21 @@
+#text1 {
+    background-color: brown;
+}
+
+#text2 {
+    background-color: chocolate;
+    width: 50%;
+}
+
+.oculto {
+    display: none;
+}
+
+.aumentar {
+    width: 80%;
+    height: 300px;
+}
+
+.grande {
+    font-size: 40px;
+}

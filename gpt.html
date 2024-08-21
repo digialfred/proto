@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Pendientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        table {
+            width: 50%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #addTaskBtn {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>LISTA DE TAREAS PENDIENTES</h2>
+
+    <button id="addTaskBtn">Agregar tarea</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Finalizar</th>
+            </tr>
+        </thead>
+        <tbody id="taskList">
+            <tr>
+                <td>Pintar la fachada de la casa</td>
+                <td><button onclick="deleteTask(this)">Finalizar</button></td>
+            </tr>
+            <tr>
+                <td>Comprar comida para el perro</td>
+                <td><button onclick="deleteTask(this)">Finalizar</button></td>
+            </tr>
+            <tr>
+                <td>Pagar la tarjeta de crédito</td>
+                <td><button onclick="deleteTask(this)">Finalizar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('addTaskBtn').addEventListener('click', function() {
+            const task = prompt('Escribe la nueva tarea:');
+            if (task) {
+                addTask(task);
+            }
+        });
+
+        function addTask(task) {
+            const table = document.getElementById('taskList');
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+
+            cell1.textContent = task;
+
+            const btn = document.createElement('button');
+            btn.textContent = 'Finalizar';
+            btn.setAttribute('onclick', 'deleteTask(this)');
+            cell2.appendChild(btn);
+        }
+
+        function deleteTask(btn) {
+            const row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+
+</body>
+</html>
