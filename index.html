@@ -23,7 +23,7 @@
                 <input type="text" class="form-control" id="nuevaTarea" >
               </div>
               <div class="mb-3">
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button type="button" class="btn btn-primary" id="agregar">Agregar</button>
               </div>
         </form>
     </div>
@@ -39,10 +39,18 @@
           </tr>
         </thead>
         <tbody id="cuerpo-tabla">
-          <tr>           
-            <td></td>
-            <td></td>           
-          </tr>         
+          <tr>
+            <td>Pintar la fachada de la casa</td>
+            <td><button onclick="deleteTask(this)">Finalizar</button></td>
+        </tr>
+        <tr>
+            <td>Comprar comida para el perro</td>
+            <td><button onclick="deleteTask(this)">Finalizar</button></td>
+        </tr>
+        <tr>
+            <td>Pagar la tarjeta de crédito</td>
+            <td><button onclick="deleteTask(this)">Finalizar</button></td>
+        </tr>     
         </tbody>
       </table>
     </div>

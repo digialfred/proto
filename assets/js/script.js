@@ -16,3 +16,27 @@ document.getElementById("agregartarea").addEventListener("click", function () {
     semuestra = false;
   }
 });
+
+document.getElementById("agregar").addEventListener("click", function () {
+  const tareacon = document.getElementById("nuevaTarea");
+  const tarea = tareacon.value;
+  agregartarea(tarea);
+});
+
+function agregartarea(tarea) {
+  const tabla = document.getElementById("tabla-tareas");
+  const fila = tabla.insertRow();
+  const celda1 = fila.insertCell(0);
+  const celda2 = fila.insertCell(1);
+
+  celda1.textContent = tarea;
+
+  const btn = document.createElement('button');
+            btn.textContent = 'Finalizar';
+            btn.setAttribute('onclick', 'deleteTask(this)');
+            celda2.appendChild(btn);
+}
+function deleteTask(btn) {
+    const fila = btn.parentNode.parentNode;
+    fila.parentNode.removeChild(fila);
+}
